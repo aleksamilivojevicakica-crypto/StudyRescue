@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fc"><meta name="description" content="StudyRescue: a multilingual study planner with deadline-aware schedules and optional AI coaching.">
+<title>StudyRescue — Coach</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/styles.css">
+<script defer src="../assets/translations.js"></script><script defer src="../assets/app.js"></script></head>
+<body data-lang="fr" data-page="coach">
+<a class="skip" id="skipLink" href="#main">Skip to main content</a>
+<div class="app-layout">
+ <aside class="sidebar" id="sidebar"><a class="brand" href="overview.html" aria-label="StudyRescue home"><span class="brand-symbol">✳</span><span>study<span class="brand-highlight">rescue</span><small id="brandSub">YOUR STUDY SPACE</small></span></a>
+ <div class="side-caption" data-t="workspace">WORKSPACE</div><nav id="mainNav" class="nav" aria-label="Main navigation"></nav>
+ <div class="sidebar-bottom"><div class="sidebar-message"><span class="mini-sun">✦</span><strong data-t="sidebarTitle">Small steps. Big progress.</strong><p data-t="sidebarText">A doable plan is better than a perfect one.</p></div>
+ <div class="profile-row"><span class="avatar">S</span><span><b>StudyRescue</b><small data-t="localData">Your data stays in this browser</small></span></div></div></aside>
+ <div class="backdrop" id="backdrop"></div>
+ <div class="app-shell"><header class="topbar"><div class="topbar-left"><button class="icon-button mobile-toggle" id="mobileMenu" aria-label="Open menu">☰</button><span class="crumb" data-t="workspace">Workspace</span><span class="crumbsep">/</span><strong id="topPage"></strong></div><div class="topbar-actions"><div id="todayPill" class="date-pill"></div><div class="language-switch" id="languageSwitch" aria-label="Language"></div><button class="btn btn-primary btn-sm" id="newTaskHeader"><span>＋</span><span data-t="newTask">New task</span></button></div></header>
+ <main class="main-content" id="main"><noscript>StudyRescue needs JavaScript to work.</noscript><div id="pageContent"></div></main>
+ <footer class="footer">StudyRescue <span>·</span> <span data-t="footer">Designed for real students and realistic schedules.</span> <span class="footer-version">v4.0</span></footer></div>
+</div>
+<dialog id="taskDialog" class="modal"><form id="taskForm"><div class="modal-head"><div><p class="eyebrow" data-t="assignment">ASSIGNMENT</p><h2 id="dialogHeading" data-t="addTask">Add assignment</h2></div><button type="button" class="close-button" id="closeDialog" aria-label="Close">×</button></div><input type="hidden" id="editingId">
+<div class="form-grid"><label class="field full"><span data-t="taskName">Assignment name</span><input id="inputTitle" maxlength="130" required data-ph="namePlaceholder" placeholder="e.g. Finish algebra worksheet"></label>
+<label class="field"><span data-t="subject">Subject</span><select id="inputSubject"></select></label>
+<label class="field"><span data-t="deadline">Deadline</span><input id="inputDue" type="date" required></label>
+<label class="field"><span data-t="estimate">Estimated minutes</span><input id="inputMinutes" type="number" min="5" max="1800" step="5" value="45" required></label>
+<label class="field"><span data-t="difficulty">Difficulty</span><select id="inputDifficulty"></select></label>
+<label class="field full"><span data-t="importance">Importance</span><select id="inputImportance"></select></label>
+<label class="field full"><span data-t="notes">Notes (optional)</span><textarea id="inputNotes" rows="3" maxlength="500" data-ph="notesPlaceholder" placeholder="Anything worth remembering"></textarea></label></div>
+<div class="modal-actions"><button type="button" class="btn btn-ghost" id="cancelDialog" data-t="cancel">Cancel</button><button type="submit" class="btn btn-primary" data-t="saveTask">Save assignment</button></div></form></dialog>
+<div id="toast" class="toast" aria-live="polite" role="status"></div>
+</body></html>
